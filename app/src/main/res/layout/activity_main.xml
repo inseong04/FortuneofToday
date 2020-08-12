@@ -82,8 +82,12 @@
         android:fontFamily="@font/notoserifkrmedium"
         app:layout_constraintTop_toBottomOf="@id/main_edit_name"
         app:layout_constraintRight_toRightOf="@id/main_text_month"
+        app:layout_constraintLeft_toLeftOf="@id/main_text_birthday"
         android:layout_marginRight="60dp"
+
         android:layout_marginTop="55dp"
+        android:visibility="invisible"
+        android:layout_marginLeft="140dp"
         />
     <TextView
         android:id="@+id/main_text_month"
@@ -97,6 +101,8 @@
         android:textSize="20dp"
         android:fontFamily="@font/notoserifkrmedium"
         android:layout_marginTop="55dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="invisible"
         />
     <TextView
         android:id="@+id/main_text_day"
@@ -105,11 +111,13 @@
         android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@id/main_edit_name"
         app:layout_constraintLeft_toLeftOf="@id/main_text_month"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="45dp"
         android:text="일"
         android:textSize="20dp"
         android:fontFamily="@font/notoserifkrmedium"
         android:layout_marginTop="55dp"
+
+        android:visibility="invisible"
         />
     <Button
         android:id="@+id/main_nextscreen_btn"

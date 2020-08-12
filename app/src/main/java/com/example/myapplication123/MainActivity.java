@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
 private TextView textView1;
 
 
-    int mYear = 0,mMonth = 0,mDay =0;
-
-
     //옥인성
     Button main_nextscreen_btn, main_datepicker_btn;
     TextView main_text_year;
@@ -44,9 +41,7 @@ private TextView textView1;
 //        String fortune;   fortune = fortune1[number];
 
 
-        main_text_year.setVisibility(View.INVISIBLE); //
-        main_text_month.setVisibility(View.INVISIBLE);
-        main_text_day.setVisibility(View.INVISIBLE); // 년 월 일 을 숨겨줌
+
 
         //옥인성
         main_datepicker_btn = findViewById(R.id.datepicker_btn);
@@ -59,21 +54,28 @@ private TextView textView1;
         main_datepicker_move = findViewById(R.id.datepicker_move);
 
 
+
         Intent intent = getIntent(); // DatePicker -> MainActivity 로 전달된 값을 받는다.
-        if(intent.getStringExtra("asd")!=null){ // DatePicker ->MainActivity 전달된 값이 0이 아닐 경우 변수에 저장한다.
+        if(intent.getStringExtra("year")!=null){ // DatePicker ->MainActivity 전달된 값이 0이 아닐 경우 변수에 저장한다.
 
             year = intent.getStringExtra("year");
             month = intent.getStringExtra("month");
             day = intent.getStringExtra("day");
+
         }
 
-        run = intent.getIntExtra("run",1);
+        run = intent.getIntExtra("run",0);
 
         if (run != 0){
         main_text_year.setVisibility(View.VISIBLE); //
         main_text_month.setVisibility(View.VISIBLE);
         main_text_day.setVisibility(View.VISIBLE); // 년,월,일 을 보여줌
             main_datepicker_move.setVisibility(View.INVISIBLE); // main_datepicker_move를 숨겨줌
+
+            main_text_year.setText(year+"년");
+            main_text_month.setText(month+"월");
+            main_text_day.setText(day+"일");
+
         }
 
         //옥인성
