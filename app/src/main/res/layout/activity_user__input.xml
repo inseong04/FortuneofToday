@@ -15,20 +15,8 @@
         android:fontFamily="@font/songmyungregular"
         android:textSize="35dp"
         android:textColor="#000000"
-        android:text="처음이시군요!"
+        android:text="오늘의 운세"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
-    <TextView
-        android:id="@+id/main_explain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="정보를 입력해주세요!"
-        android:fontFamily="@font/notoserifkrmedium"
-        android:textSize="15dp"
-        android:textColor="#000000"
-        app:layout_constraintTop_toBottomOf="@id/main_text_title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
@@ -113,7 +101,7 @@
         android:textSize="20dp"
         android:fontFamily="@font/notoserifkrmedium"
         android:layout_marginTop="55dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="10dp"
         android:visibility="invisible"
         />
     <TextView
@@ -123,7 +111,7 @@
         android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@id/main_edit_name"
         app:layout_constraintLeft_toLeftOf="@id/main_text_month"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="45dp"
         android:text="일"
         android:textSize="20dp"
         android:fontFamily="@font/notoserifkrmedium"
@@ -132,7 +120,7 @@
         android:visibility="invisible"
         />
     <Button
-        android:id="@+id/main_not_activation_nextscreen_btn"
+        android:id="@+id/main_nextscreen_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="다음으로"
@@ -141,16 +129,5 @@
         app:layout_constraintRight_toRightOf="parent"
         android:background="@drawable/button_design"
         android:layout_marginBottom="20dp"
-        /> // 비활성화시 버튼 안눌리게 구성
-    <Button
-        android:id="@+id/main_activation_nextscreen_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="다음으로"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/button_design"
-        android:layout_marginBottom="20dp"
-        /> // 활성화시 버튼 눌리게 구성
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

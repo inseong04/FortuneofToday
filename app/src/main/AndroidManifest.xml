@@ -4,12 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/title_icon"
+        android:label="오늘의 문세"
+        android:roundIcon="@mipmap/title_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Print"></activity>
+        <activity android:name=".User_Input"></activity>
+        <activity android:name=".Print" />
         <activity android:name=".DatePicker" />
         <activity android:name=".MainActivity">
             <intent-filter>

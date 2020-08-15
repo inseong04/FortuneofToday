@@ -43,7 +43,7 @@ public class DatePicker extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent mainactivity = new Intent(getApplicationContext(),MainActivity.class); // DatePicker -> MainActivity
+                Intent mainactivity = new Intent(getApplicationContext(),User_Input.class); // DatePicker -> MainActivity
 
                 if (intent_year == null){
                     intent_year = "2020";
