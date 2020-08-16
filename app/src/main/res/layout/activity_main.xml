@@ -28,6 +28,14 @@
         app:layout_constraintTop_toTopOf="parent"
         />
     <TextView
+        android:id="@+id/background_1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#daedff"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="110dp"
+        />
+    <TextView
         android:id="@+id/information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,5 +105,13 @@
         app:layout_constraintLeft_toRightOf="@id/username"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="35dp"
+        />
+    <TextView
+        android:id="@+id/background_2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#daedff"
+        app:layout_constraintTop_toBottomOf="@id/background_1"
+        android:layout_marginTop="65dp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
