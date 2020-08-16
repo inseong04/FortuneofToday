@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class Print extends AppCompatActivity {
+public class    Print extends AppCompatActivity {
 
     TextView textView1;
     @Override
