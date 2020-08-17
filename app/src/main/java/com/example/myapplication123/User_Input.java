@@ -71,7 +71,7 @@ public class User_Input extends AppCompatActivity {
         main_activation_nextscreen_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Print.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         }); // print이동

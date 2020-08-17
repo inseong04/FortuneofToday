@@ -18,7 +18,10 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 private TextView textView1;
 
-
+    TextView background2;
+    TextView background3;
+    TextView background4;
+    TextView background5;
 
 
 
@@ -27,7 +30,10 @@ private TextView textView1;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+    background2 = findViewById(R.id.background_2);
+        background3 = findViewById(R.id.background_3);
+        background4 = findViewById(R.id.background_4);
+        background5 = findViewById(R.id.background_5);
 
 
     }
