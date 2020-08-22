@@ -7,6 +7,15 @@
     tools:context=".MainActivity"
     android:background="#ffffff"
     >
+    <Button
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -23,6 +32,7 @@
         android:textSize="50dp"
         android:fontFamily="@font/songmyungregular"
         android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -69,7 +79,7 @@
         android:textSize="20dp"
         android:textColor="#0da6fe"
         app:layout_constraintTop_toBottomOf="@id/information"
-        app:layout_constraintLeft_toRightOf="@id/sex"
+        app:layout_constraintLeft_toRightOf="@id/username"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="35dp"
         />
@@ -85,6 +95,7 @@
         android:layout_marginTop="5dp"
         />
     <TextView
+        android:id="@+id/main_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="16"
@@ -94,18 +105,7 @@
         app:layout_constraintLeft_toRightOf="@id/main_month"
         android:layout_marginTop="5dp"
         />
-    <TextView
-        android:id="@+id/sex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="성별"
-        android:textSize="20dp"
-        android:textColor="#0da6fe"
-        app:layout_constraintTop_toBottomOf="@id/information"
-        app:layout_constraintLeft_toRightOf="@id/username"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="35dp"
-        />
+
     <TextView
         android:id="@+id/background_2"
         android:layout_width="match_parent"

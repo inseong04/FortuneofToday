@@ -137,7 +137,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/button_design"
+        android:background="@drawable/not_action_button_design"
         android:layout_marginBottom="20dp"
         /> // 비활성화시 버튼 안눌리게 구성
     <Button
