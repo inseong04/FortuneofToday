@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/title_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fortunecookie"></activity>
+        <activity android:name=".Jobluck"></activity>
+        <activity android:name=".Schoolprint" />
+        <activity android:name=".Fortunecookie" />
         <activity android:name=".User_Input" />
         <activity android:name=".Print" />
         <activity android:name=".DatePicker" />

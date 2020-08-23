@@ -67,6 +67,29 @@ private TextView textView1;
                 startActivity(test);
             }
         });
+
+        //박윤수 화면이동 코드
+        background2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent name = new Intent(getApplicationContext(), Print.class);
+                startActivity(name);
+            }
+        });
+        background3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent school = new Intent(getApplicationContext(), Schoolprint.class);
+                startActivity(school);
+            }
+        });
+        background4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent job = new Intent(getApplicationContext(),Jobluck.class);
+                startActivity(job);
+            }
+        });
     }
 
 }

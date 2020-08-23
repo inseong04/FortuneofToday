@@ -8,23 +8,23 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class    Print extends AppCompatActivity {
+public class Schoolprint extends AppCompatActivity {
     //윤수
-    TextView textView1;
-    TextView textView2;
-    TextView textView3;
+    TextView textView4;
+    TextView textView5;
+    TextView textView6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_print);
         Random random = new Random();
-        int number = random.nextInt(45);
-        String[] fortune1 = getResources().getStringArray(R.array.LUCK);
+        int number = random.nextInt(15);
+        String[] fortune1 = getResources().getStringArray(R.array.SCHOOL);
         String fortune;   fortune = fortune1[number];
         String main = fortune.split("\\.")[0];
         String story = "";
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name") + "님의 오늘의 운세";
+        String name = intent.getStringExtra("name") + "님의 학업 운세";
 
         for(String i : fortune.split("\\."))
         {
@@ -36,12 +36,12 @@ public class    Print extends AppCompatActivity {
         }
 
 
-        textView1 = (TextView)findViewById(R.id.textView1);
-        textView1.setText(story);
-        textView2 = (TextView)findViewById(R.id.textView2);
-        textView2.setText(main);
-        textView3 = (TextView)findViewById(R.id.textView3);
-        textView3.setText(name);
+        textView4 = (TextView)findViewById(R.id.textView1);
+        textView4.setText(story);
+        textView5 = (TextView)findViewById(R.id.textView2);
+        textView5.setText(main);
+        textView6 = (TextView)findViewById(R.id.textView3);
+        textView6.setText(name);
 
     }
     //윤수
