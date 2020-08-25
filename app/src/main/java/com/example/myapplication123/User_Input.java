@@ -81,6 +81,9 @@ public class User_Input extends AppCompatActivity {
                 SharedPreferences.Editor editor2 = year_save.edit();
                 SharedPreferences.Editor editor3 = month_save.edit();
                 SharedPreferences.Editor editor4 = day_save.edit();
+                editor2.putString("year","");
+                editor3.putString("month","");
+                editor4.putString("day","");
                 editor2.commit();
                 editor3.commit();
                 editor4.commit();

@@ -22,7 +22,7 @@ private TextView textView1;
             information_username,information_year,information_month,information_day;
     SharedPreferences first_action,user_name,user_year,user_month,user_day;
     Button test_btn;
-
+    String name,year,month,day;
     private static final String TAG = "MainActivity";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +42,10 @@ private TextView textView1;
         user_year = getSharedPreferences("user_year",MODE_PRIVATE);
         user_month = getSharedPreferences("user_month",MODE_PRIVATE);
         user_day = getSharedPreferences("user_day",MODE_PRIVATE);
-        String name = user_name.getString("user_name","ERROR");
-        String year = user_name.getString("user_year","ERROR");
-        String month = user_name.getString("user_month","ERROR");
-        String day = user_name.getString("user_day","ERROR");
+        name = user_name.getString("user_name","ERROR");
+        year = user_name.getString("user_year","ERROR");
+        month = user_name.getString("user_month","ERROR");
+        day = user_name.getString("user_day","ERROR");
         information_username.setText(name);
         information_year.setText(year + ".");
         information_month.setText(month + ".");
