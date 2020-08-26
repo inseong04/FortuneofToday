@@ -90,6 +90,14 @@ private TextView textView1;
                 startActivity(job);
             }
         });
+        background5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent fortunecookie = new Intent(getApplicationContext(),Fortunecookie.class);
+                startActivity(fortunecookie);
+            }
+        });
+
     }
 
 }

@@ -239,7 +239,7 @@
         android:id="@+id/background5_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="한번 포춘쿠키를 열어보세요!"
+        android:text="한번 포츈z쿠키를 열어보세요!"
         android:textSize="20dp"
         android:textColor="#0da6fe"
         app:layout_constraintTop_toBottomOf="@id/background4_text1"
