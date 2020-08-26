@@ -47,6 +47,8 @@ public class User_Input extends AppCompatActivity {
         main_activation_nextscreen_btn = findViewById(R.id.main_activation_nextscreen_btn);
         main_not_activation_nextscreen_btn = findViewById(R.id.main_not_activation_nextscreen_btn);
         Intent intent = getIntent(); // DatePicker -> MainActivity 로 전달된 값을 받는다.
+
+
         if (intent.getStringExtra("year") != null) { // DatePicker -> MainActivity 전달된 값이 0이 아닐 경우 변수에 저장한다.
 
             year = intent.getStringExtra("year");
@@ -81,12 +83,14 @@ public class User_Input extends AppCompatActivity {
                 SharedPreferences.Editor editor2 = year_save.edit();
                 SharedPreferences.Editor editor3 = month_save.edit();
                 SharedPreferences.Editor editor4 = day_save.edit();
-                editor2.putString("year","");
-                editor3.putString("month","");
-                editor4.putString("day","");
+                editor2.putString("user_year",year);
+                editor3.putString("user_month",month);
+                editor4.putString("user_day",day);
                 editor2.commit();
                 editor3.commit();
                 editor4.commit();
+
+
 
             }
         }); // MainActivity 이동 &&생년월일 전달
@@ -103,10 +107,10 @@ public class User_Input extends AppCompatActivity {
 
 
         // 이름저장코드
-        String text = main_edit_name.getText().toString(); // text에 edit_text내용을 저장
+        String name_data = main_edit_name.getText().toString(); // text에 edit_text내용을 저장
         SharedPreferences name_save = getSharedPreferences("user_name", MODE_PRIVATE);
         SharedPreferences.Editor editor = name_save.edit();
-        String name_data = name_save.getString("text", "");
+        editor.putString("username",name_data);
         editor.commit();
         // 이름저장코드
 
