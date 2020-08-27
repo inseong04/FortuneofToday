@@ -94,8 +94,8 @@
         app:layout_constraintRight_toRightOf="parent"
         android:background="@drawable/textbox"
         />
-    <TextView
-        android:id="@+id/fortunecookie_capture_bottom_tv"
+    <Button
+        android:id="@+id/fortunecookie_capture_bottom_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="결과 캡쳐하기"
@@ -107,9 +107,11 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:visibility="gone"
+        android:onClick="mOnCaptureClick"
         />
-    <TextView
-        android:id="@+id/fortunecookie_bottom_tv"
+
+    <Button
+        android:id="@+id/fortunecookie_bottom_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="이 버튼을 마구 클릭해주세요!"
@@ -120,6 +122,7 @@
         android:background="#2b98ff"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
+
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -13,6 +15,7 @@ public class    Print extends AppCompatActivity {
     TextView textView1;
     TextView textView2;
     TextView textView3;
+    Button print_close;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,8 @@ public class    Print extends AppCompatActivity {
         String story = "";
         Intent intent = getIntent();
         String name = intent.getStringExtra("name") + "님의 오늘의 운세";
+
+        print_close.findViewById(R.id.print_close);
 
         for(String i : fortune.split("\\."))
         {
@@ -43,6 +48,13 @@ public class    Print extends AppCompatActivity {
         textView3 = (TextView)findViewById(R.id.textView3);
         textView3.setText(name);
 
+        print_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent print_intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(print_intent);
+            }
+        });
     }
     //윤수
 }

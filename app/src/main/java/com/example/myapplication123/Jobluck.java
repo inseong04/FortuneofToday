@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -13,10 +15,13 @@ public class Jobluck extends AppCompatActivity {
     TextView textView7;
     TextView textView8;
     TextView textView9;
+    //Button jobluck_close;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_print);
+        setContentView(R.layout.activity_jobluck);
+
+        //jobluck_close.findViewById(R.id.jobluck_close);
         Random random = new Random();
         int number = random.nextInt(15);
         String[] fortune1 = getResources().getStringArray(R.array.JOB);
@@ -43,6 +48,13 @@ public class Jobluck extends AppCompatActivity {
         textView9 = (TextView)findViewById(R.id.textView3);
         textView9.setText(name);
 
+/*        jobluck_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });*/
     }
     //윤수
 }
