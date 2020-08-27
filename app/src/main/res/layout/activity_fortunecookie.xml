@@ -43,6 +43,7 @@
         android:src="@drawable/cookie"
         />
     <ImageView
+        android:id="@+id/cookie_open_image"
         android:layout_width="match_parent"
         android:layout_height="350dp"
         app:layout_constraintTop_toBottomOf="@id/fortunecookie_close"
@@ -52,10 +53,23 @@
         android:visibility="invisible"
         /> //오픈했을때의 포츈쿠키
     <TextView
+        android:id="@+id/fortune_text"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="결과"
+        android:textSize="25dp"
+        android:fontFamily="@font/notoserifkrmedium"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/cookie_image"
+        android:layout_marginTop="50dp"
+        android:background="#ffffff"
+        android:visibility="invisible"
+        /> // 포춘쿠키 결과 TextView
+    <TextView
         android:id="@+id/fortunecookie_tv1"
         android:layout_width="290dp"
         android:layout_height="30dp"
-        android:text="무엇이든 잘될거에요! "
+        android:text="무엇이든 잘될거에요!"
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:gravity="center"
@@ -70,7 +84,7 @@
         android:layout_width="290dp"
         android:layout_height="100dp"
         android:text="포춘쿠키는 그저 흘러 지나가는 작은 즐거움에 불과하지만,
-작은 즐거움에서 당신이 꿈이 이루어지길 바랄게요!"
+작은 즐거움에서 당신의 꿈이 이루어지길 바랄게요!"
         android:textColor="#000000"
         android:fontFamily="@font/notoserifkrmedium"
         android:gravity="center"
@@ -81,10 +95,24 @@
         android:background="@drawable/textbox"
         />
     <TextView
+        android:id="@+id/fortunecookie_capture_bottom_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="결과 캡쳐하기"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#2b98ff"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone"
+        />
+    <TextView
         android:id="@+id/fortunecookie_bottom_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="위 사진을 마구 클릭해주세요!"
+        android:text="이 버튼을 마구 클릭해주세요!"
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:gravity="center"
