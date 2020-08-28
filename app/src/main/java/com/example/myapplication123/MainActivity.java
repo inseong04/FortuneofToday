@@ -20,8 +20,7 @@ private TextView textView1;
 
     TextView background2,background3,background4,background5,
             information_username,information_year,information_month,information_day;
-    SharedPreferences first_action,user_name,user_year,user_month,user_day;
-    Button test_btn;
+    Button test_btn,gototest_btn;
     String name,year,month,day;
     private static final String TAG = "MainActivity";
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +31,20 @@ private TextView textView1;
         background3 = findViewById(R.id.background_3);
         background4 = findViewById(R.id.background_4);
         background5 = findViewById(R.id.background_5);
-        first_action = getSharedPreferences("first_action",MODE_PRIVATE);
+        SharedPreferences first_action = getSharedPreferences("first_action",MODE_PRIVATE);
         information_username =findViewById(R.id.username);
         information_year = findViewById(R.id.main_year);
         information_month = findViewById(R.id.main_month);
         information_day = findViewById(R.id.main_day);
 
-        user_name = getSharedPreferences("user_name",MODE_PRIVATE);
-        user_year = getSharedPreferences("user_year",MODE_PRIVATE);
-        user_month = getSharedPreferences("user_month",MODE_PRIVATE);
-        user_day = getSharedPreferences("user_day",MODE_PRIVATE);
-        name = user_name.getString("name","ERROR");
-        year = user_year.getString("year","ERROR");
-        month = user_month.getString("month","ERROR");
-        day = user_day.getString("day","ERROR");
+        SharedPreferences user_name = getSharedPreferences("name_save",MODE_PRIVATE);
+        SharedPreferences user_year = getSharedPreferences("year_save",MODE_PRIVATE);
+        SharedPreferences user_month = getSharedPreferences("month_save",MODE_PRIVATE);
+        SharedPreferences user_day = getSharedPreferences("day_save",MODE_PRIVATE);
+        name = user_name.getString("name_save","ERROR");
+        year = user_year.getString("year_save","ERROR");
+        month = user_month.getString("month_save","ERROR");
+        day = user_day.getString("day_save","ERROR");
         information_username.setText(name);
         information_year.setText(year + ".");
         information_month.setText(month + ".");
@@ -65,6 +64,15 @@ private TextView textView1;
             public void onClick(View v) {
                 Intent test = new Intent(getApplicationContext(),User_Input.class);
                 startActivity(test);
+            }
+        });
+
+        gototest_btn = findViewById(R.id.goto_test);
+        gototest_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go_test = new Intent(getApplicationContext(),Test.class);
+                startActivity(go_test);
             }
         });
 

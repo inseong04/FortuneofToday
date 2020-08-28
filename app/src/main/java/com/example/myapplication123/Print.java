@@ -20,6 +20,9 @@ public class    Print extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_print);
+
+        print_close.findViewById(R.id.print_close);
+
         Random random = new Random();
         int number = random.nextInt(45);
         String[] fortune1 = getResources().getStringArray(R.array.LUCK);
@@ -28,8 +31,6 @@ public class    Print extends AppCompatActivity {
         String story = "";
         Intent intent = getIntent();
         String name = intent.getStringExtra("name") + "님의 오늘의 운세";
-
-        print_close.findViewById(R.id.print_close);
 
         for(String i : fortune.split("\\."))
         {

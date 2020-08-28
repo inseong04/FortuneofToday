@@ -32,7 +32,7 @@ public class DatePicker extends AppCompatActivity {
             public void onDateChanged(android.widget.DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
                 intent_year = year+"";
-                intent_month = monthOfYear+"";
+                intent_month = monthOfYear+1+"";
                 intent_day = dayOfMonth+"";
 
             }

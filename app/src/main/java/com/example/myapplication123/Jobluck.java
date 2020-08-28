@@ -15,13 +15,13 @@ public class Jobluck extends AppCompatActivity {
     TextView textView7;
     TextView textView8;
     TextView textView9;
-    //Button jobluck_close;
+    Button jobluck_close;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jobluck);
+        setContentView(R.layout.activity_print);
 
-        //jobluck_close.findViewById(R.id.jobluck_close);
+        jobluck_close.findViewById(R.id.print_close);
         Random random = new Random();
         int number = random.nextInt(15);
         String[] fortune1 = getResources().getStringArray(R.array.JOB);
@@ -48,13 +48,13 @@ public class Jobluck extends AppCompatActivity {
         textView9 = (TextView)findViewById(R.id.textView3);
         textView9.setText(name);
 
-/*        jobluck_close.setOnClickListener(new View.OnClickListener() {
+        jobluck_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
     //윤수
 }

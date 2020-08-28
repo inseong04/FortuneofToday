@@ -46,10 +46,10 @@ public class User_Input extends AppCompatActivity {
         main_datepicker_move = findViewById(R.id.datepicker_move);
         main_activation_nextscreen_btn = findViewById(R.id.main_activation_nextscreen_btn);
         main_not_activation_nextscreen_btn = findViewById(R.id.main_not_activation_nextscreen_btn);
-        Intent intent = getIntent(); // DatePicker -> MainActivity 로 전달된 값을 받는다.
+        Intent intent = getIntent(); // DatePicker -> User_input 으로 전달된 값을 받는다.
 
 
-        if (intent.getStringExtra("year") != null) { // DatePicker -> MainActivity 전달된 값이 0이 아닐 경우 변수에 저장한다.
+        if (intent.getStringExtra("year") != null) { // DatePicker -> User_input 전달된 값이 0이 아닐 경우 변수에 저장한다.
 
             year = intent.getStringExtra("year");
             month = intent.getStringExtra("month");
@@ -75,9 +75,7 @@ public class User_Input extends AppCompatActivity {
         main_activation_nextscreen_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                SharedPreferences year_save = getSharedPreferences("user_year",MODE_PRIVATE);
+/*                SharedPreferences year_save = getSharedPreferences("user_year",MODE_PRIVATE);
                 SharedPreferences month_save = getSharedPreferences("user_month",MODE_PRIVATE);
                 SharedPreferences day_save = getSharedPreferences("user_day",MODE_PRIVATE);
                 SharedPreferences.Editor editor2 = year_save.edit();
@@ -88,8 +86,28 @@ public class User_Input extends AppCompatActivity {
                 editor4.putString("user_day",day);
                 editor2.commit();
                 editor3.commit();
-                editor4.commit();
+                editor4.commit();*/
+                SharedPreferences year_save = getSharedPreferences("year_save",MODE_PRIVATE);
+                SharedPreferences montn_save = getSharedPreferences("month_save",MODE_PRIVATE);
+                SharedPreferences day_save = getSharedPreferences("day_save",MODE_PRIVATE);
+                SharedPreferences.Editor editor_year = year_save.edit();
+                SharedPreferences.Editor editor_month = montn_save.edit();
+                SharedPreferences.Editor editor_day = day_save.edit();
+                editor_year.putString("year_save",year);
+                editor_month.putString("month_save",month);
+                editor_day.putString("day_save",day);
+                editor_year.commit();
+                editor_month.commit();
+                editor_day.commit();
 
+                String name_data = main_edit_name.getText().toString(); // text에 edit_text내용을 저장
+                SharedPreferences name_save = getSharedPreferences("name_save",MODE_PRIVATE);
+                SharedPreferences.Editor editor_name = name_save.edit();
+                editor_name.putString("name_save",name_data);
+                editor_name.commit();
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
 
 
             }
@@ -107,11 +125,6 @@ public class User_Input extends AppCompatActivity {
 
 
         // 이름저장코드
-        String name_data = main_edit_name.getText().toString(); // text에 edit_text내용을 저장
-        SharedPreferences name_save = getSharedPreferences("user_name", MODE_PRIVATE);
-        SharedPreferences.Editor editor = name_save.edit();
-        editor.putString("username",name_data);
-        editor.commit();
         // 이름저장코드
 
         main_edit_name.addTextChangedListener(new TextWatcher() { // edit_text가 입력이 끝나야 버튼활성화시키는 코드

@@ -8,6 +8,14 @@
     android:background="#ffffff"
     >
     <Button
+        android:id="@+id/goto_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="goto test"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <Button
         android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
