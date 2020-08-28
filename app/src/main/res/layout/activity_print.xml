@@ -5,13 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Print">
-
-
     <TextView
         android:id="@+id/print_title_tv"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="오늘의 직업운"
+        android:text="오늘의 운세"
         android:textSize="30dp"
         android:textColor="#000000"
         android:fontFamily="@font/songmyungregular"
@@ -78,19 +76,5 @@
         android:padding="15dp"
         tools:ignore="MissingConstraints"
         android:background="@drawable/textbox"
-        />
-
-    <Button
-        android:id="@+id/jobluck_capture_bottom_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="결과 캡쳐하기"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#2b98ff"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

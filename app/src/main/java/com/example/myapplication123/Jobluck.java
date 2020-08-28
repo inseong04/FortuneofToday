@@ -15,13 +15,12 @@ public class Jobluck extends AppCompatActivity {
     TextView textView7;
     TextView textView8;
     TextView textView9;
+
     Button jobluck_close;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_print);
-
-        jobluck_close.findViewById(R.id.print_close);
+        setContentView(R.layout.activity_jobluck);
         Random random = new Random();
         int number = random.nextInt(15);
         String[] fortune1 = getResources().getStringArray(R.array.JOB);
@@ -30,6 +29,8 @@ public class Jobluck extends AppCompatActivity {
         String story = "";
         Intent intent = getIntent();
         String name = intent.getStringExtra("name") + "님의 직업 운세";
+
+        jobluck_close.findViewById(R.id.jobluck_close);
 
         for(String i : fortune.split("\\."))
         {
@@ -41,20 +42,21 @@ public class Jobluck extends AppCompatActivity {
         }
 
 
-        textView7 = (TextView)findViewById(R.id.textView1);
+        textView7 = (TextView)findViewById(R.id.textView7);
         textView7.setText(story);
-        textView8 = (TextView)findViewById(R.id.textView2);
+        textView8 = (TextView)findViewById(R.id.textView8);
         textView8.setText(main);
-        textView9 = (TextView)findViewById(R.id.textView3);
+        textView9 = (TextView)findViewById(R.id.textView9);
         textView9.setText(name);
 
         jobluck_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
+                Intent jobluck_intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(jobluck_intent);
             }
         });
-    }
+
+}
     //윤수
 }

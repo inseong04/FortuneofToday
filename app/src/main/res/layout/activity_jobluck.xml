@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Jobluck">
     <TextView
-        android:id="@+id/jobluck_title_tv"
+        android:id="@+id/print_title_tv"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:text="오늘의 직업운"
@@ -39,22 +39,21 @@
         android:layout_height="wrap_content"
         android:textColor="#AD747E0D"
         android:textSize="30dp"
-        android:text="OOO님의 오늘의 운세"
-        app:layout_constraintTop_toBottomOf="@id/jobluck_title_tv"
+        android:text="OOO님의 오늘의 직업운"
+        app:layout_constraintTop_toBottomOf="@id/print_title_tv"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="MissingConstraints"/>
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textColor="#ffffff"
         android:text="한줄요약"
         android:gravity="center"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/textView9"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -64,7 +63,7 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/notoserifkrmedium"
         android:text="세부내용"
@@ -74,24 +73,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:padding="15dp"
         tools:ignore="MissingConstraints"
         android:background="@drawable/textbox"
         />
-
-    <Button
-        android:id="@+id/jobluck_capture_bottom_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="결과 캡쳐하기"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#2b98ff"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        /> //        android:onClick="mOnCaptureClick"
-
 </androidx.constraintlayout.widget.ConstraintLayout>
