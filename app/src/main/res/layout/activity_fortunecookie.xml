@@ -55,16 +55,17 @@
     <TextView
         android:id="@+id/fortune_text"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:text="결과"
         android:textSize="25dp"
+        android:textColor="#000000"
         android:fontFamily="@font/notoserifkrmedium"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/cookie_image"
-        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/cookie_open_image"
+        android:layout_marginTop="25dp"
         android:background="#ffffff"
         android:visibility="invisible"
-        /> // 포춘쿠키 결과 TextView 이 텍스트뷰에 스트링 넣어주어야함.
+        />
     <TextView
         android:id="@+id/fortunecookie_tv1"
         android:layout_width="290dp"
@@ -95,10 +96,10 @@
         android:background="@drawable/textbox"
         />
     <Button
-        android:id="@+id/fortunecookie_capture_bottom_btn"
+        android:id="@+id/fortunecookie_restart_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="결과 캡쳐하기"
+        android:text="포춘쿠키 다시열어보기"
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:gravity="center"
@@ -107,7 +108,6 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:visibility="gone"
-        android:onClick="mOnCaptureClick"
         />
 
     <Button

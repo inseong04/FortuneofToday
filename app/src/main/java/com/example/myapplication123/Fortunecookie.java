@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,10 +17,11 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Random;
 
 public class Fortunecookie extends AppCompatActivity {
 
-    Button fortunecookie_close,fortunecookie_bottom_btn,fortunecookie_capture_bottom_btn;
+    Button fortunecookie_close,fortunecookie_bottom_btn,fortunecookie_restart_btn;
     TextView fortunecookie_tv1,fortunecookie_tv2,fortune_text;
     ImageView cookie_image,cookie_open_image;
 
@@ -33,31 +35,37 @@ public class Fortunecookie extends AppCompatActivity {
         fortunecookie_bottom_btn = findViewById(R.id.fortunecookie_bottom_btn);
         cookie_image = findViewById(R.id.cookie_image);
         cookie_open_image = findViewById(R.id.cookie_open_image);
-        fortunecookie_capture_bottom_btn.findViewById(R.id.fortunecookie_capture_bottom_btn);
-        fortune_text.findViewById(R.id.fortune_text);
+        fortunecookie_restart_btn = findViewById(R.id.fortunecookie_restart_btn);
+        fortune_text = findViewById(R.id.fortune_text);
 
 
         fortunecookie_bottom_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             click_num++;
+                Log.e("클릭횟수",""+click_num);
+                if (click_num == 4){
+                    Toast.makeText(getApplicationContext(),"조금만 더 눌러주세요!",Toast.LENGTH_SHORT).show();
+                }
+
+                if (click_num == 7){
+                    Toast.makeText(getApplicationContext(),"포춘쿠키가 열렸습니다!",Toast.LENGTH_SHORT).show();
+                    cookie_image.setVisibility(View.GONE);
+                    cookie_open_image.setVisibility(View.VISIBLE);
+                    fortunecookie_tv1.setVisibility(View.GONE);
+                    fortunecookie_tv2.setVisibility(View.GONE);
+                    fortunecookie_bottom_btn.setVisibility(View.GONE);
+                    fortune_text.setVisibility(View.VISIBLE);
+                    fortunecookie_restart_btn.setVisibility(View.VISIBLE);
+                    Random random = new Random();
+                    int number = random.nextInt(25);
+                    String[] fortune1 = getResources().getStringArray(R.array.cookie);
+                    String fortune;   fortune = fortune1[number];
+                    fortune_text = (TextView)findViewById(R.id.fortune_text);
+                    fortune_text.setText(fortune);
+                }
             }
         });
-
-        if (click_num == 4){
-            Toast.makeText(Fortunecookie.this,"조금만 더 눌러주세요!",Toast.LENGTH_SHORT).show();
-        }
-
-        if (click_num == 7){
-            Toast.makeText(Fortunecookie.this, "포춘쿠키가 열렸습니다!", Toast.LENGTH_SHORT).show();
-            cookie_image.setVisibility(View.GONE);
-            cookie_open_image.setVisibility(View.VISIBLE);
-            fortunecookie_tv1.setVisibility(View.GONE);
-            fortunecookie_tv2.setVisibility(View.GONE);
-            fortunecookie_bottom_btn.setVisibility(View.GONE);
-            fortunecookie_capture_bottom_btn.setVisibility(View.VISIBLE);
-            fortune_text.setVisibility(View.VISIBLE);
-        }
 
         fortunecookie_close.setOnClickListener(new View.OnClickListener() { // 닫기버튼
             @Override
@@ -66,37 +74,17 @@ public class Fortunecookie extends AppCompatActivity {
                 startActivity(close);
             }
         });
+
+        fortunecookie_restart_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                Intent restart_intent = new Intent(getApplicationContext(),Fortunecookie.class);
+                startActivity(restart_intent);
+            }
+        });
     }
-    public void mOnCaptureClick(View v){
-        //전체화면
-        View rootView = getWindow().getDecorView();
 
-        File screenShot = ScreenShot(rootView);
-        if(screenShot!=null){
-            //갤러리에 추가
-            sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(screenShot)));
-        }
-    }
-    public File ScreenShot(View view){
-        view.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
-
-        Bitmap screenBitmap = view.getDrawingCache();   //캐시를 비트맵으로 변환
-
-        String filename = "screenshot.png";
-        File file = new File(Environment.getExternalStorageDirectory()+"/Pictures", filename);  //Pictures폴더 screenshot.png 파일
-        FileOutputStream os = null;
-        try{
-            os = new FileOutputStream(file);
-            screenBitmap.compress(Bitmap.CompressFormat.PNG, 90, os);   //비트맵을 PNG파일로 변환
-            os.close();
-        }catch (IOException e){
-            e.printStackTrace();
-            return null;
-        }
-
-        view.setDrawingCacheEnabled(false);
-        return file;
-    }
 
 
 }

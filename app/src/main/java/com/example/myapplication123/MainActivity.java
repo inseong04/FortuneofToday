@@ -80,21 +80,21 @@ private TextView textView1;
         background2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent name = new Intent(getApplicationContext(), Print.class);
+                Intent name = new Intent(getApplicationContext(), Print_Loading.class);
                 startActivity(name);
             }
         });
         background3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent school = new Intent(getApplicationContext(), Schoolprint.class);
+                Intent school = new Intent(getApplicationContext(), Schoolprint_Loading.class);
                 startActivity(school);
             }
         });
         background4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent job = new Intent(getApplicationContext(),Jobluck.class);
+                Intent job = new Intent(getApplicationContext(),Jobluck_Loading.class);
                 startActivity(job);
             }
         });

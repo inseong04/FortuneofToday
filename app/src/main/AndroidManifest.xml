@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/title_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Test"></activity>
+        <activity android:name=".Print_Loading"></activity>
+        <activity android:name=".Schoolprint_Loading" />
+        <activity android:name=".Jobluck_Loading" />
+        <activity android:name=".Test" />
         <activity android:name=".Jobluck" />
         <activity android:name=".Schoolprint" />
         <activity android:name=".Fortunecookie" />
