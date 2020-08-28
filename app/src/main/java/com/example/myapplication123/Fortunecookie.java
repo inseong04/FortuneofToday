@@ -33,8 +33,9 @@ public class Fortunecookie extends AppCompatActivity {
         fortunecookie_bottom_btn = findViewById(R.id.fortunecookie_bottom_btn);
         cookie_image = findViewById(R.id.cookie_image);
         cookie_open_image = findViewById(R.id.cookie_open_image);
-        fortunecookie_capture_bottom_btn.findViewById(R.id.fortunecookie_capture_bottom_btn);
-        fortune_text.findViewById(R.id.fortune_text);
+        // Error Part
+//        fortunecookie_capture_bottom_btn.findViewById(R.id.fortunecookie_capture_bottom_btn);
+//        fortune_text.findViewById(R.id.fortune_text);
 
 
         fortunecookie_bottom_btn.setOnClickListener(new View.OnClickListener() {
