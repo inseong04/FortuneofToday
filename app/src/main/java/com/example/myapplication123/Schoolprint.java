@@ -3,6 +3,7 @@ package com.example.myapplication123;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class Schoolprint extends AppCompatActivity {
     TextView textView5;
     TextView textView6;
     Button schoolprint_close;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +29,13 @@ public class Schoolprint extends AppCompatActivity {
         String main = fortune.split("\\.")[0];
         String story = "";
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name") + "님의 학업 운세";
+        // String name = intent.getStringExtra("name") + "님의 학업 운세";
 
-        schoolprint_close.findViewById(R.id.schoolprint_close);
+        SharedPreferences name_save = getSharedPreferences("name_save",MODE_PRIVATE);
+        name = name_save.getString("name_save","ERROR") + "님의 학업 운세";
+
+        schoolprint_close = findViewById(R.id.schoolprint_close);
+
 
         for(String i : fortune.split("\\."))
         {
@@ -47,6 +53,7 @@ public class Schoolprint extends AppCompatActivity {
         textView5.setText(main);
         textView6 = (TextView)findViewById(R.id.textView6);
         textView6.setText(name);
+
 
         schoolprint_close.setOnClickListener(new View.OnClickListener() {
             @Override

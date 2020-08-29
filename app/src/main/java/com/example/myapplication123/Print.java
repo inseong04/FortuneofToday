@@ -3,6 +3,7 @@ package com.example.myapplication123;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +17,13 @@ public class    Print extends AppCompatActivity {
     TextView textView2;
     TextView textView3;
     Button print_close;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_print);
+
+
 
 
         Random random = new Random();
@@ -29,7 +33,7 @@ public class    Print extends AppCompatActivity {
         String main = fortune.split("\\.")[0];
         String story = "";
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name") + "님의 오늘의 운세";
+        //String name = intent.getStringExtra("name") + "님의 오늘의 운세";
 
         print_close = findViewById(R.id.print_close);
 
@@ -48,6 +52,9 @@ public class    Print extends AppCompatActivity {
         textView2 = (TextView)findViewById(R.id.textView2);
         textView2.setText(main);
         textView3 = (TextView)findViewById(R.id.textView3);
+
+        SharedPreferences name_save = getSharedPreferences("name_save",MODE_PRIVATE);
+        name = name_save.getString("name_save","ERROR") + "님의 오늘의 운세";
         textView3.setText(name);
 
         print_close.setOnClickListener(new View.OnClickListener() {

@@ -26,7 +26,8 @@ public class User_Input extends AppCompatActivity {
     TextView main_text_title;
     TextView main_datepicker_move;
     String year, month, day;
-    int run = 0; // 생년월일 정보 입력여부
+    String name_data;
+    int run = 0 , edit_run = 0; // 생년월일 정보 입력여부
     //옥인성
 
 
@@ -68,6 +69,9 @@ public class User_Input extends AppCompatActivity {
             main_text_month.setText(month + "월");
             main_text_day.setText(day + "일");
 
+            if(edit_run == 1) {
+                main_edit_name.setText(name_data);
+            }
         }
 
         // 년 월 일 코드
@@ -100,12 +104,13 @@ public class User_Input extends AppCompatActivity {
                 editor_month.commit();
                 editor_day.commit();
 
+/*
                 String name_data = main_edit_name.getText().toString(); // text에 edit_text내용을 저장
                 SharedPreferences name_save = getSharedPreferences("name_save",MODE_PRIVATE);
                 SharedPreferences.Editor editor_name = name_save.edit();
                 editor_name.putString("name_save",name_data);
                 editor_name.commit();
-
+*/
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
 
@@ -140,7 +145,16 @@ public class User_Input extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (run != 0) { // Datepicker 에서 생년월일까지 입력해야 버튼을 활성화 시킨다.
+
+                if (run == 0) {
+                    edit_run = 1;
+                    name_data = main_edit_name.getText().toString();
+                    SharedPreferences name_save = getSharedPreferences("name_save",MODE_PRIVATE);
+                    SharedPreferences.Editor editor_name = name_save.edit();
+                    editor_name.putString("name_save",name_data);
+                    editor_name.commit();
+                }
+                else if (run != 0) { // Datepicker 에서 생년월일까지 입력해야 버튼을 활성화 시킨다.
                     main_not_activation_nextscreen_btn.setVisibility(View.GONE);
                     main_activation_nextscreen_btn.setVisibility(View.VISIBLE);
                 }

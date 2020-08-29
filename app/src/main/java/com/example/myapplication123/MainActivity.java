@@ -20,7 +20,7 @@ private TextView textView1;
 
     TextView background2,background3,background4,background5,
             information_username,information_year,information_month,information_day;
-    Button test_btn,gototest_btn;
+    Button test_btn;
     String name,year,month,day;
     private static final String TAG = "MainActivity";
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,14 +67,7 @@ private TextView textView1;
             }
         });
 
-        gototest_btn = findViewById(R.id.goto_test);
-        gototest_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent go_test = new Intent(getApplicationContext(),Test.class);
-                startActivity(go_test);
-            }
-        });
+
 
         //박윤수 화면이동 코드
         background2.setOnClickListener(new View.OnClickListener() {
